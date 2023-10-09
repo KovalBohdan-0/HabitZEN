@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {useState} from "react";
 import axios from "axios";
+import {User} from "../shared/User.ts";
+import {useNavigate} from "react-router-dom";
 
 export function SignUp() {
     const [password, setPassword] = useState("");
@@ -19,6 +21,7 @@ export function SignUp() {
     const [passwordError, setPasswordError] = useState("");
     const [confirmationError, setConfirmationError] = useState("");
     const apiUrl = import.meta.env.VITE_API_URL;
+    let navigate = useNavigate();
 
     const validateConfirmationPassword = () => {
         if (password != confirmationPassword) {
@@ -58,7 +61,8 @@ export function SignUp() {
                 email: email, password: password
             })
                 .then(function (response: any) {
-                    console.log(response);
+                    User.setJwt(response.data.authorization.token);
+                    navigate("/main");
                 })
                 .catch(function (error: any) {
                     if (error.response.status == 400) {

@@ -13,8 +13,10 @@ import Container from '@mui/material/Container';
 import axios from "axios";
 import {User} from "../shared/User.ts";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export function Login() {
+    let navigate = useNavigate();
     const apiUrl = import.meta.env.VITE_API_URL;
     const [loginError, setLoginError] = useState("");
 
@@ -27,6 +29,7 @@ export function Login() {
         })
             .then(function (response: any) {
                 User.setJwt(response.data.authorization.token);
+                navigate("/main");
             })
             .catch(function (error: any) {
                 setLoginError("Email or password is incorrect")

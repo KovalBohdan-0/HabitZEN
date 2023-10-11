@@ -17,5 +17,8 @@ export function Main() {
     return (<>
         <SideBar/>
         Main
+        Main
+        Main
+        Main
     </>)
 }

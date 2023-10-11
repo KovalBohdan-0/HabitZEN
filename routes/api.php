@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\Auth\AuthController;
+use App\Http\Controllers\API\HabitController;
+use App\Http\Controllers\API\ProgressController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,20 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
     Route::post('logout', 'logout');
 });
+
+Route::controller(HabitController::class)->group(function () {
+    Route::get('habits', 'index');
+    Route::get('habits/{id}', 'show');
+    Route::post('habits', 'store');
+    Route::put('habits/{id}', 'update');
+    Route::delete('habits/{id}', 'delete');
+});
+
+Route::controller(ProgressController::class)->group(function () {
+    Route::get('progress/habit/{habit_id}', 'index');
+    Route::get('progress/{id}', 'show');
+    Route::post('progress', 'store');
+    Route::put('progress/{id}', 'update');
+    Route::delete('progress/{id}', 'delete');
+});
+

@@ -11,8 +11,59 @@ POST http://localhost:8000/api/login
 Content-Type: application/json
 
 {
-"email": "email3@gmail.com",
-"password": "passrowd123"
+"email": "email4@gmail.com",
+"password": "passss"
 }
+
+###
+GET http://localhost:8000/api/habits
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjk3MDQxOTUyLCJleHAiOjE2OTcwNDU1NTIsIm5iZiI6MTY5NzA0MTk1MiwianRpIjoiMEhjRlhmS1lBMEpKRFNnWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ccg_T5L8dg2txUqL8pp0MPuVqPO-vWSygDeYm8iSd_Y
+#Accept: application/json
+
+###
+POST http://localhost:8000/api/habits
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjk3MDQxOTUyLCJleHAiOjE2OTcwNDU1NTIsIm5iZiI6MTY5NzA0MTk1MiwianRpIjoiMEhjRlhmS1lBMEpKRFNnWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ccg_T5L8dg2txUqL8pp0MPuVqPO-vWSygDeYm8iSd_Y
+Content-Type: application/json
+
+{
+    "name": "first1",
+    "time": "12:00",
+    "time_type": "MORNING",
+    "type": "TIMES",
+    "week_day": "MONDAY",
+    "bad_habit": false,
+    "goal": 5
+}
+
+###
+DELETE http://localhost:8000/api/habits/8
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjk3MDQxOTUyLCJleHAiOjE2OTcwNDU1NTIsIm5iZiI6MTY5NzA0MTk1MiwianRpIjoiMEhjRlhmS1lBMEpKRFNnWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ccg_T5L8dg2txUqL8pp0MPuVqPO-vWSygDeYm8iSd_Y
+
+
+###
+POST http://localhost:8000/api/progress
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjk3MDQxOTUyLCJleHAiOjE2OTcwNDU1NTIsIm5iZiI6MTY5NzA0MTk1MiwianRpIjoiMEhjRlhmS1lBMEpKRFNnWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ccg_T5L8dg2txUqL8pp0MPuVqPO-vWSygDeYm8iSd_Y
+Content-Type: application/json
+
+{
+    "complete": 10,
+    "date": "2023-10-11",
+    "habit_id": "2"
+}
+
+###
+GET http://localhost:8000/api/progress/habit/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjk3MDQxOTUyLCJleHAiOjE2OTcwNDU1NTIsIm5iZiI6MTY5NzA0MTk1MiwianRpIjoiMEhjRlhmS1lBMEpKRFNnWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ccg_T5L8dg2txUqL8pp0MPuVqPO-vWSygDeYm8iSd_Y
+
+###
+GET http://localhost:8000/api/progress/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjk3MDQxOTUyLCJleHAiOjE2OTcwNDU1NTIsIm5iZiI6MTY5NzA0MTk1MiwianRpIjoiMEhjRlhmS1lBMEpKRFNnWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ccg_T5L8dg2txUqL8pp0MPuVqPO-vWSygDeYm8iSd_Y
+
+###
+DELETE http://localhost:8000/api/progress/6
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjk3MDQxOTUyLCJleHAiOjE2OTcwNDU1NTIsIm5iZiI6MTY5NzA0MTk1MiwianRpIjoiMEhjRlhmS1lBMEpKRFNnWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ccg_T5L8dg2txUqL8pp0MPuVqPO-vWSygDeYm8iSd_Y
+
+
+
 
 

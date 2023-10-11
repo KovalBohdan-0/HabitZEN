@@ -21,11 +21,14 @@ function App() {
         },
         components: {
             MuiListItemButton: {
-                styleOverrides: {
-                    selected: {
-                        backgroundColor: "blue"
-                    }
-                },
+               styleOverrides: {
+                   "root": {
+                       "&.Mui-selected": {
+                           "backgroundColor": "#2a67f4",
+                           "color": "white"
+                       }
+                   }
+               }
             }
         }
     });

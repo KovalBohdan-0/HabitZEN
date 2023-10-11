@@ -94,7 +94,7 @@ export function SideBar() {
                         <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        All habits
+                        {selectedItem}
                     </Typography>
                 </Toolbar>
             </StyledAppBar>
@@ -120,8 +120,7 @@ export function SideBar() {
                 <List>
                     <ListItem key={"All habits"} disablePadding>
                         <ListItemButton selected={selectedItem === "All habits"}
-                                        onClick={() => handleListItemClick("All habits")}
-                                        className={selectedItem === "All habits" ? 'selectedListItemButton' : ''}>
+                                        onClick={() => handleListItemClick("All habits")}>
                             <ListItemIcon>
                                 {selectedItem === "All habits" ? <Inbox sx={{color: "white"}}/> : <Inbox/>}
                             </ListItemIcon>
@@ -130,8 +129,7 @@ export function SideBar() {
                     </ListItem>
                     <ListItem key={"Today"} disablePadding>
                         <ListItemButton selected={selectedItem === "Today"}
-                                        onClick={() => handleListItemClick("Today")}
-                                        className={selectedItem === "Today" ? 'selectedListItemButton' : ''}>
+                                        onClick={() => handleListItemClick("Today")}>
                             <ListItemIcon>
                                 {selectedItem === "Today" ? <WbSunnyIcon sx={{color: "white"}}/> : <WbSunnyIcon/>}
                             </ListItemIcon>
@@ -140,8 +138,7 @@ export function SideBar() {
                     </ListItem>
                     <ListItem key={"This week"} disablePadding>
                         <ListItemButton selected={selectedItem === "This week"}
-                                        onClick={() => handleListItemClick("This week")}
-                                        className={selectedItem === "This week" ? 'selectedListItemButton' : ''}>
+                                        onClick={() => handleListItemClick("This week")}>
                             <ListItemIcon>
                                 {selectedItem === "This week" ? <DateRangeIcon sx={{color: "white"}}/> : <DateRangeIcon/>}
                             </ListItemIcon>
@@ -153,8 +150,7 @@ export function SideBar() {
                 <List>
                     <ListItem key={"Settings"} disablePadding>
                         <ListItemButton selected={selectedItem === "Settings"}
-                                        onClick={() => handleListItemClick("Settings")}
-                                        className={selectedItem === "Settings" ? 'selectedListItemButton' : ''}>
+                                        onClick={() => handleListItemClick("Settings")}>
                             <ListItemIcon>
                                 {selectedItem === "Settings" ? <SettingsIcon sx={{color: "white"}}/> : <SettingsIcon/>}
                             </ListItemIcon>
